@@ -15,7 +15,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Mono+One&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="index.js"></script>
+
   <title>Document</title>
 </head>
 
@@ -44,96 +48,146 @@
   <section id="Models">
     <h1>Models</h1>
     <div class="container">
-    <div class="card">
-      <img src="wlu-removebg-preview.png" alt="Model Image">
-      <div class="card-content">
-        <p class="price">$1000000</p>
-        <button class="buy-now">BUY NOW</button>
+      <div class="card">
+        <img src="wlu-removebg-preview.png" alt="Model Image">
+        <div class="card-content">
+          <p class="price">$1000000</p>
+          <button class="buy-now">BUY NOW</button>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="iris (1).webp" alt="img">
+        <img src="iris (2).webp" alt="img">
+        <img src="iris (3).webp" alt="img">
+        <img src="iris (4).webp" alt="img">
+        <img src="iris (5).webp" alt="img">
+        <img src="iris (6).webp" alt="img">
+        <img src="iris (7).webp" alt="img">
       </div>
     </div>
-    <div class="image-container">
-      <img  src="iris (1).webp" alt="img">
-      <img src="iris (2).webp" alt="img">
-      <img src="iris (3).webp" alt="img">
-      <img src="iris (4).webp" alt="img">
-      <img src="iris (5).webp" alt="img">
-      <img src="iris (6).webp" alt="img">
-      <img src="iris (7).webp" alt="img">
-    </div>
-  </div>
+  </section>
+  <section>
+    <div class="NameOf-car">
+     <h1>718 Cayman GT4 RS</h1> 
+     </div>
+     <img>
+
+     <h2>From EUR 162,500.00 incl. VAT Recommended Retail Price</h2>
+</section>
+<section class="details">
+<h3>Technical Specifications</h3>
+<table border="1" >
+<thead  class="1">
+ <tr> 
+        <th>Number of Cylinders</th>
+        <td>6</td>
+    </tr>
+    <tr>
+
+        <th>Bore</th>  
+        <td>102,0 mm</td>
+    </tr>
+    <tr>
+        <th>Displacement</th>
+        <td>81,5 mm</td>
+    </tr>
+    <tr>
+        <th>Power (kW)</th>
+        <td>3 996 cm³</td>
+    </tr>
+    <tr>
+        <th>Power (hp)</th>
+        <td>368 kW</td>
+    </tr>
+    <tr>
+        <th>Max RPM</th>
+        <td>500 ch</td>
+    </tr>
+    <tr>
+        <th>Max Torque</th> 
+        <td>9 000 tr/min</td>   
+    </tr>
+    <tr> 
+        <th>Max Power per Liter (kW/l)</th>
+        <td>450 Nm</td>
+    </tr>
+    <tr>
+        <th>Max Power per Liter (hp/l)</th> 
+        <td>92,0 kW/l</td>
+    </tr>
+</thead>
+
+</tbody>
+</table>
+</section>
+<section class="order">
+  <h4>Order Form</h4>
+  <form id="orderForm" onsubmit="return validateOrder()">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" required>
+
+      <label for="telephone">Numéro de téléphone :</label>
+      <input type="tel" id="telephone" name="telephone" maxlength="10" pattern="\d{10}" placeholder="Ex : 0612345678" required>
+
+      <label for="codePostal">Code Postal :</label>
+      <input type="text" id="codePostal" name="codePostal" required>
+
+      <label for="quantite">Quantité de produit :</label>
+      <input type="number" id="quantite" name="quantite" min="1" value="1" required onchange="calculateTotal()">
+
+      <div class="total">
+          Total (MAD) : <span id="total">0</span>
+      </div>
+
+      <button type="submit">Commander</button>
+      <script src="index.js"></script>
+  </form>
   </section>
 
-
-  <!-- <form class="form-container">
-    <label for="first-name">First Name</label> <br>
-    <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required><br>
-
-    <label for="last-name">Last Name</label> <br>
-    <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required><br>
-
-    <label for="phone">Phone Number</label> <br>
-    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required> <br>
-
-    <label for="email">Email</label> <br>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
-    <label for="quantity">Quantity</label> <br>
-    <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" required ><br>
-
-    <label for="total">Total</label><br>
-    <input type="text" id="total" name="total" readonly><br> <br>
-    <button type="submit" class="order-button">Order now!</button>
-
-
-
-
-  </form> -->
-
-  
   <section id="footer">
     <video autoplay muted loop id="bg-video">
-        <source src="WhatsApp Video 2024-11-28 at 12.40.32.mp4" type="video/mp4">
+      <source src="WhatsApp Video 2024-11-28 at 12.40.32.mp4" type="video/mp4">
     </video>
 
     <div class="footer-content">
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank" class="icon">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://wa.me/" target="_blank" class="icon">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://google.com" target="_blank" class="icon">
-                <i class="fab fa-google"></i>
-            </a>
-            <a href="https://youtube.com" target="_blank" class="icon">
-                <i class="fab fa-youtube"></i>
-            </a>
-        </div>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.me/" target="_blank" class="icon">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://google.com" target="_blank" class="icon">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="https://youtube.com" target="_blank" class="icon">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
 
-        <div class="footer-links">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#team">Our Team</a></li>
-            </ul>
-        </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#team">Our Team</a></li>
+        </ul>
+      </div>
     </div>
-</section>
+  </section>
 
- </div>
-  </div> 
+  </div>
+  </div>
 
-
-
-
-
+  </footer>
   
- </footer> 
 
 
 
- 
+
 
 
 </body>
